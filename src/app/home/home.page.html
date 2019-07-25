@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -41,4 +41,63 @@
         <ion-label>Theme Your App</ion-label>
       </ion-item>
     </ion-list>
+</ion-content> -->
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Way2Recycle
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Welcome to our News App</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Enjoy the latest news from TechCrunch.
+      </p>
+      <ion-spinner *ngIf="!articles" name="dots"></ion-spinner>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let article of new_articles">
+    <!-- <ion-img src="{{ article.urlToImage }}"></ion-img> -->
+
+    <img [src]="article.safeImagePath" />
+
+    <ion-card-header>
+      <ion-card-subtitle>Title: {{ article.title }}</ion-card-subtitle>
+      <ion-card-subtitle>Price: {{ article.price }}</ion-card-subtitle>
+      <ion-card-subtitle>Type: {{ article.category }}</ion-card-subtitle>
+      <ion-card-subtitle>Location: {{ article.location }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        {{ article.description }}
+      </p>
+      <p>{{ article.published_date }}</p>
+      <ion-button
+        ion-button
+        fill="outline"
+        routerLink="/detail/{{ article.id }}"
+        large
+        >Read full article</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 </ion-content>
+
+<!-- <ion-button ion-button fill="outline" routerLink="/about" large
+  >Go to About</ion-button
+> -->

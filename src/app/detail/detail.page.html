@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="arrow-back" (click)="onGoBack()"></ion-icon>
+    <!-- <ion-icon
+      name="arrow-back"
+      routerLink="/home"
+      routerDirection="backward"
+    ></ion-icon> -->
+
+    <ion-title>detail2</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Welcome to our News App</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Enjoy the latest news from TechCrunch.
+      </p>
+      <ion-spinner *ngIf="!articles" name="dots"></ion-spinner>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<img [src]="newArticle.safeImagePath" />
+<p>Title: {{ newArticle.title }}</p>
+<p>Price : {{ newArticle.price }}</p>
+<p>Cagtegory: {{ newArticle.category }}</p>
+<p>Description: {{ newArticle.description }}</p>
+<p>Location: {{ newArticle.location }}</p>
+<p>Created At: {{ newArticle.published_date }}</p>

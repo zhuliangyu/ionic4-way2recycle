@@ -1,0 +1,37 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>about</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content> -->
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      About
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" padding>
+  <p>
+    This is a news app built with Ionic 4 and the
+    <a href="https://newsapi.org/">News API</a>
+  </p>
+
+  <h1>{{ myNewJSON.name }}</h1>
+  <img [src]="myNewJSON.safeImagePath" />
+
+  <h1>{{ my_new_JSON_arr[0].name }}</h1>
+  <img [src]="my_new_JSON_arr[0].safeImagePath" />
+  <h1>{{ my_new_JSON_arr[1].name }}</h1>
+  <img [src]="my_new_JSON_arr[1].safeImagePath" />
+</ion-content>
+
+<ion-button ion-button fill="outline" routerLink="/home" large>GoBack</ion-button>
