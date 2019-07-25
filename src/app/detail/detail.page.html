@@ -25,10 +25,10 @@
   </ion-card>
 </ion-content>
 
-<img [src]="newArticle.safeImagePath" />
-<p>Title: {{ newArticle.title }}</p>
-<p>Price : {{ newArticle.price }}</p>
-<p>Cagtegory: {{ newArticle.category }}</p>
-<p>Description: {{ newArticle.description }}</p>
-<p>Location: {{ newArticle.location }}</p>
-<p>Created At: {{ newArticle.published_date }}</p>
+<img [src]="article.imagePreviewUrl" />
+<p>Title: {{ article.title }}</p>
+<p>Price : {{ article.price }}</p>
+<p>Category: {{ article.category }}</p>
+<p>Description: {{ article.description }}</p>
+<p>Location: {{ article.locationStr }}</p>
+<p>Created At: {{ article.date }}</p>

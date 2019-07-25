@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { Article } from "./article.model";
 
 @Injectable({
   providedIn: "root"
@@ -20,7 +21,7 @@ export class ApiService {
   }
 
   getOneNews(id) {
-    return this.httpClient.get(
+    return this.httpClient.get<Article>(
       // `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${
       //   this.API_KEY
       // }`
