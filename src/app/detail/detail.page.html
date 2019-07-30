@@ -7,12 +7,12 @@
       routerDirection="backward"
     ></ion-icon> -->
 
-    <ion-title>detail2</ion-title>
+    <ion-title>Detail</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <!-- <ion-card>
     <ion-card-header>
       <ion-card-subtitle>Welcome to our News App</ion-card-subtitle>
     </ion-card-header>
@@ -22,13 +22,37 @@
       </p>
       <ion-spinner *ngIf="!articles" name="dots"></ion-spinner>
     </ion-card-content>
+  </ion-card> -->
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ article.title }}</ion-card-title>
+
+      <ion-item>
+        <ion-label>$ {{ article.price }}</ion-label>
+        <ion-badge color="danger" slot="start">Price</ion-badge>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>{{ article.category }}</ion-label>
+        <ion-badge slot="start">Category</ion-badge>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>{{ article.locationStr }}</ion-label>
+        <ion-badge slot="start">Location</ion-badge>
+      </ion-item>
+
+      <ion-item>
+        <ion-badge color="tertiary">{{ article.date }}</ion-badge>
+      </ion-item>
+    </ion-card-header>
+    <img [src]="article.imagePreviewUrl" />
+
+    <ion-card-content>
+      <div><ion-badge color="primary">Description</ion-badge></div>
+
+      {{ article.description }}
+    </ion-card-content>
   </ion-card>
 </ion-content>
-
-<img [src]="article.imagePreviewUrl" />
-<p>Title: {{ article.title }}</p>
-<p>Price : {{ article.price }}</p>
-<p>Category: {{ article.category }}</p>
-<p>Description: {{ article.description }}</p>
-<p>Location: {{ article.locationStr }}</p>
-<p>Created At: {{ article.date }}</p>

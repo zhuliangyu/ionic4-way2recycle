@@ -57,11 +57,11 @@
 <ion-content color="primary">
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle>Welcome to our News App</ion-card-subtitle>
+      <ion-card-subtitle>Welcome to staff exchange App</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
       <p>
-        Enjoy the latest news from TechCrunch.
+        Enjoy your saving from Way2Recycle today.
       </p>
       <ion-spinner *ngIf="!articles" name="dots"></ion-spinner>
     </ion-card-content>
@@ -79,16 +79,16 @@
       <ion-card-subtitle>Location: {{ article.location }}</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      <p>
+      <!-- <p>
         {{ article.description }}
-      </p>
-      <p>{{ article.published_date }}</p>
+      </p> -->
+      <p>Updated at: {{ article.published_date }}</p>
       <ion-button
         ion-button
         fill="outline"
         routerLink="/detail/{{ article.id }}"
         large
-        >Read full article</ion-button
+        >Read full item</ion-button
       >
     </ion-card-content>
   </ion-card>

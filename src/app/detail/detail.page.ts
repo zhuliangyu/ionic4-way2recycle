@@ -31,6 +31,30 @@ export class DetailPage implements OnInit {
   };
   newArticle = {};
 
+  //todo
+  formatDate(date) {
+    var monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ];
+
+    var day = date.getDate();
+    var monthIndex = date.getMonth();
+    var year = date.getFullYear();
+
+    return day + " " + monthNames[monthIndex] + " " + year;
+  }
+
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get("id");
     // console.log(id);
@@ -45,9 +69,9 @@ export class DetailPage implements OnInit {
       this.article.locationStr = data.locationStr;
       this.article.date = data.date;
       this.article.imagePreviewUrl = this._sanitizer.bypassSecurityTrustResourceUrl(
-             data.imagePreviewUrl)
+        data.imagePreviewUrl
+      );
 
-      
       // parse array
       // this.article = this.article.map(my_json => {
       //   return {
