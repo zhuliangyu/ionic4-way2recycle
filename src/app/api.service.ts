@@ -13,10 +13,7 @@ export class ApiService {
 
   getNews() {
     return this.httpClient.get(
-      // `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${
-      //   this.API_KEY
-      // }`
-
+    
       // "http://localhost:3000/v1/items"
       "https://way2recycle.herokuapp.com/v1/items"
     );
@@ -24,9 +21,6 @@ export class ApiService {
 
   getOneNews(id) {
     return this.httpClient.get<Article>(
-      // `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${
-      //   this.API_KEY
-      // }`
 
       // "http://localhost:3000/v1/item/" + id
       "https://way2recycle.herokuapp.com/v1/item/" + id
